@@ -34,8 +34,8 @@ function draw() {
 
             var pix = (x + y * width) * 4
             pixels[pix + 0] = bright +n
-            pixels[pix + 1] = bright+n
-            pixels[pix + 2] = bright
+            pixels[pix + 1] = bright
+            pixels[pix + 2] = bright+n
             pixels[pix + 3] = 255
         }
     }
