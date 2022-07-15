@@ -42,10 +42,22 @@
         #color{
             padding: 10px;
         }
+        header{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: Montserrat;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.425);
+        }
     </style>
 </head>
 
 <body>
+    <header>Mandebrot Set visualizer</header>
     <div class="controls">
         <input type="range" min="0" max="2" step=".01" id="maxRange" value="2">
         <input type="range" min="-2" max="0" step=".01" id="minRange" value="-2">
