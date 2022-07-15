@@ -1,7 +1,16 @@
+let colorSel =  document.querySelector('#color')
+let redCol, blueCol, greenCol = 0
+
 function setup() {
     createCanvas(300, 300);
     pixelDensity(1)
 }
+
+colorSel.addEventListener('click', ()=>{
+    redCol = floor(random(100))
+    blueCol = floor(random(100))
+    greenCol = floor(random(100))
+})
 
 
 function draw() {
@@ -9,7 +18,6 @@ function draw() {
     let maxVal = parseFloat(document.querySelector('#maxRange').value)
 
     loadPixels()
-    console.log(maxVal, minVal)
 
     for (let x = 0; x < width; x++) {
         for (let y = 0; y < height; y++) {
@@ -38,9 +46,9 @@ function draw() {
 
 
             var pix = (x + y * width) * 4
-            pixels[pix + 0] = bright +n
-            pixels[pix + 1] = bright
-            pixels[pix + 2] = bright+n
+            pixels[pix + 0] = bright + redCol
+            pixels[pix + 1] = bright+ blueCol
+            pixels[pix + 2] = bright+greenCol
             pixels[pix + 3] = 255
         }
     }
