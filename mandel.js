@@ -1,15 +1,20 @@
 function setup() {
-    createCanvas(1000, 1000);
+    createCanvas(300, 300);
     pixelDensity(1)
 }
-let minVal = document.querySelector('#min')
-let maxVal = document.querySelector('#max')
+
+
 function draw() {
+    let minVal = parseFloat(document.querySelector('#minRange').value)
+    let maxVal = parseFloat(document.querySelector('#maxRange').value)
+
     loadPixels()
+    console.log(maxVal, minVal)
+
     for (let x = 0; x < width; x++) {
         for (let y = 0; y < height; y++) {
-            var a = map(x, 0, width,-2,2)
-            var b = map(y, 0, height, -2,2)
+            var a = map(x, 0, width,minVal, maxVal)
+            var b = map(y, 0, height, minVal, maxVal)
 
             let ca = a
             let cb = b
@@ -30,7 +35,7 @@ function draw() {
                 bright = 0
             }
 
-            
+
 
             var pix = (x + y * width) * 4
             pixels[pix + 0] = bright +n
